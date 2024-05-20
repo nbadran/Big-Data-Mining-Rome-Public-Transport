@@ -1,4 +1,4 @@
-# Data-Mining - Rome Public Transport
+# Data Mining - Rome Public Transport
 A comprehensive analysis of urban mobility patterns using GPS location data from public transport vehicles, specifically focusing on taxis in the metropolitan city of Rome, Italy. The aim was to extract valuable insights to identify and address issues within the urban road network. Worked on a big dataset.
 
 # Preface
@@ -37,7 +37,7 @@ Objective: Determine the most active, least active, and average activity of the 
 Explanation: Explain the rationale behind the approach and interpret the results.
 
 # Plot Location Points
-lot the location points for the specific taxi ID.
+Plot the location points for the specific taxi ID.
 Compare Location Values: Compare the mean, min, and max location values of the specific taxi ID with the global values.
 Compare Activity: Compare the total time driven by the specific taxi ID with the global mean, min, and max values.
 
