@@ -25,14 +25,14 @@ Analyze and interpret results.
 Prepare for future projects based on this dataset.
 
 # Analysis Tasks
-(a) Plot Location Points
+- Plot Location Points
 Objective: Create a 2D plot using all latitude and longitude value pairs in the dataset.
 Invalid Points, Noise, and Outliers: Define and justify what is considered invalid, noise, and outlier points. Indicate these points clearly in the plot.
 Plot Requirement: The plot should be informative and clearly explain the rationale used for identifying invalid points, noise points, and outliers.
 Action: Remove invalid points, outliers, and noise points before proceeding with the subsequent tasks.
-(b) Compute Location Values
+- Compute Location Values
 Objective: Compute the minimum, maximum, and mean location values (latitude and longitude).
-(c) Analyze Taxi Driver Activity
+- Analyze Taxi Driver Activity
 Objective: Determine the most active, least active, and average activity of the taxi drivers in terms of time driven.
 Explanation: Explain the rationale behind the approach and interpret the results.
 
