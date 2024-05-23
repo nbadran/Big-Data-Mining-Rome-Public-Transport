@@ -15,16 +15,16 @@ dim(taxi_data)
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# 2 Convert the Date.and,Time column to a proper format that R can understand
+# Convert the Date.and,Time column to a proper format that R can understand
 taxi_data$Date.and.Time <- as.POSIXct(taxi_data$Date.and.Time, format = "%Y-%m-%d %H:%M:%S", tz = "UTC")
 
 
 # ---------------------------------------------------------------------------------------------------------------------------
 
-# 3 Identify invalid data points
+# Identify invalid data points
 invalid_data <- taxi_data$Longitude > 15 | taxi_data$Latitude > 50
 
-# 4 Remove invalid data points
+# Remove invalid data points
 taxi_data_filtered <- taxi_data[!invalid_data, ]
 
 #---- OR ----
@@ -53,7 +53,7 @@ plot(taxi_data_filtered$Longitude, taxi_data_filtered$Latitude,
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# B Compute the minimum, maximum, and mean location values.
+# Compute the minimum, maximum, and mean location values.
 min_longitude <- min(taxi_data_filtered$Longitude)
 max_longitude <- max(taxi_data_filtered$Longitude)
 mean_longitude <- mean(taxi_data_filtered$Longitude)
@@ -66,7 +66,7 @@ cat("Latitude - Min:", min_latitude, ", Max:", max_latitude, ", Mean:", mean_lat
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# C  Obtain the most active, least active, and average activity of the taxi drivers (most time driven, least
+# Obtain the most active, least active, and average activity of the taxi drivers (most time driven, least
 #    time driven, and mean time driven).
 time_per_driver <- aggregate(as.numeric(as.POSIXct(taxi_data$Date.and.Time)), 
                              by = list(taxi_data$DriveNo), 
@@ -108,13 +108,12 @@ cat("Average Time Driven by Each Driver (seconds):", average_time_per_driver, "\
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# D
-# i Filter data for TaxiID 273 and plot location points ------------------------------------------
+# Filter data for TaxiID 273 and plot location points ------------------------------------------
 taxi_273 <- taxi_data_filtered[taxi_data_filtered$DriveNo == 273, ]
 
 plot(taxi_273$Longitude, taxi_273$Latitude, xlab = "Longitude", ylab = "Latitude", main = "Location Points for TaxiID 273")
 
-# ii Compute mean, min, and max location values for TaxiID 273 ------------------------------------------
+# Compute mean, min, and max location values for TaxiID 273 ------------------------------------------
 mean_lat_273 <- mean(taxi_273$Latitude)
 min_lat_273 <- min(taxi_273$Latitude)
 max_lat_273 <- max(taxi_273$Latitude)
@@ -140,7 +139,7 @@ cat("Mean Longitude:", mean_longitude, "\n")
 cat("Min Longitude:", min_longitude, "\n")
 cat("Max Longitude:", max_longitude, "\n")
 
-# iii Compute total time driven by TaxiID 273 ------------------------------------------
+# Compute total time driven by TaxiID 273 ------------------------------------------
 total_time_273 <- sum(time_diff_per_driver[273])
 
 # Compute global mean, min, and max values of time driven
